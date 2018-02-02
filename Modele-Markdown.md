@@ -48,7 +48,7 @@ Here is the code:
 
 ### Liens vers des images
 
-![Une image](Livrables/images/transmission-requetes.png).
+![Une image](images/transmission-requetes.png).
 
 ### Tables
 

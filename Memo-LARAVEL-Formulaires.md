@@ -1,7 +1,7 @@
 # Memo - Formulaires sous LARAVEL
 ## *Campus Numérique 2018 - Véronique ROUAULT*
 #
-![mon image](images/requetes_laravel.jpg).
+![mon image](images/laravel-requetes.jpg).
 
 ## Ajouter une nouvelle route pour le formulaire HTML
 
