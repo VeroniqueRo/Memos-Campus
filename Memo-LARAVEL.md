@@ -1,8 +1,44 @@
-# Mémo LARAVEL - Installation
+# Mémo MVC avec le FRAMWORK LARAVEL
 ## *Campus Numérique 2018 - Véronique ROUAULT*
 #
+##
+## Qu'est-ce que MVC ?
+MVC est un patron de conception permettant de séparer une application Web en différentes couches : `le Modèle, la Vue et le Contrôleur`.
 
+![mon image](images/schema-MVC.jpg).
 
+## Le modèle (accès aux données)
+
+Le modèle est la couche représentant les données.
+
+Le modèle consiste en une série de classes. Si les données sont tirées de la BD, chacune des classes représentera une table.
+
+Parmi les fonctionnalités codées dans le modèle, on retrouve les relations entre les tables. 
+
+![mon image](images/Laravel-PatronMVC-Modele.png).
+
+## La vue (interface utilisateur)
+
+La vue est constituée de balises HTML qui représentent ce qui sera affiché à l'écran.
+
+En plus des balises HTML, la vue peut utiliser des directives et instructions prévues par le moteur d'affichage afin d'effectuer différentes opérations, comme par exemple tester une condition ou encore boucler dans les données fournies par le modèle.
+
+La vue pourra faire appel à des ressources externes, comme des feuilles de style, des fichiers JavaScript, des images, etc.
+
+Sous Laravel, le moteur d'affichage s'appelle `Blade`.
+![mon image](images/Laravel-PatronMVC-Vue.png).
+
+## Le contrôleur (traitement)
+
+Le contrôleur est en charge d'effectuer les traitements. Il s'agit de l'élément central du patron de conception MVC.
+
+C'est le contrôleur qui retrouvera les données à l'aide du `modèle` et qui les passera à la `vue` pour les afficher.
+
+Inversement, le `contrôleur` recevra les données saisies dans la `vue` et les enregistrera dans la `base de données` à l'aide du `modèle`.
+
+En plus des échanges entre le `modèle` et la `vue`, le `contrôleur` pourra effectuer toutes sortes de tâches, comme l'envoi de courriels, l'ajout d'entrées dans le fichier de log, l'exécution d'un algorithme quelconque, etc.
+
+![mon image](images/Laravel-PatronMVC-Controleur.png).
 
 ## Installer composer
 Installation avec les commandes sous git bash avec l'install de Windows
@@ -67,7 +103,7 @@ Installer l'extension
 ```
 Laravel Blade Syntax Highlighting
 ```
-# Grands principes de LARAVEL
+## Grands principes de LARAVEL
 Le trio gagnant du framework
 1. Les `Routes`     
 Elles définissent le chemin avec des `get` (récupérer) ou des `post` (envoyer) et passe un controlleur   
@@ -134,60 +170,7 @@ Pour selectionner la partie qui sera insérée dans le template
     La liste des ingredients
 @endsection
 ```
-# Modèles
-
-`Un modèle permet d'interagir avec les tables de la BDD`
-
-
-## Créer un modèle & sa migration
-Ligne de commande pour créer un modèle et sa migration
-```php
-php artisan make:model Nom_modele -m
-```
-Le fichier modèle créé :
-```php
-App/Nom_modele.php
-```
-
-Le fichier de migration créé :
-```php
-Database/Migrations/create_nomTable_table
-```
-
-Renseigner la fonction "UP" avec les champs que l'on veut créer dans la table
-```php
-class CreateBoissonTable extends Migration
-{
-    public function up()
-    {
-        Schema::create('boissons', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name')->unique();
-            $table->integer('price');
-            $table->timestamps();
-        });
-    }
-}
-```
-
-Dans le modèle et dans la classe, indiquer les champs que l'on autorise à modifier 
-```php
-class Boisson extends Model
-{
-    //Préciser les champs que l'on a le droit de modifier 
-    protected $fillable = ['name', 'price'];
-}
-```
-Pour créer la table dans la BDD : 
-```php
-php artisan migrate
-```
-A noter, dans Bash, il est possible d'utiliser Tinker pour dialoguer avec la BDD
-```php
-php artisan tinker
-```
-
-# Bonnes pratiques et conventions d'écriture
+## Bonnes pratiques
 "Les fichiers LARAVEL doivent être courts"
 1. Créer un `controller` pour chaque ressources
 ```
@@ -200,28 +183,3 @@ Nomdelaressource@function
 `A noter` : Le nom de la route est celui qui s'affichera dans la barre du navigateur mais peut être différent de celui de la vue.   
 C'est le `return` indiqué dans le controller qui définit quelle vue sera retournée.
 
-Les colonnes de BDD sont généralement `snake_case` mais les noms de propriétés sont `camelCase`.
-Colons can be used to align columns.
-
-| Ecriture de base  |  en snake_case |   en camel_case |
-| ----------------- |:-------------------------:| ----------------:|
-| nom de variable   |  nom_de_variable          | NomDeVariable    |
-| NomDeVariable     |  nom_de_variable          | NomDeVariable    |
-|   Variable        |  variable                 | Variable         |
-
-Le nom du modèle doit avoir le même nom que la table mais au singulier et avec la Première lettre en majuscule
- 
-Eloquent est capable de faire la conversion automatiquement.
-
-| Nom du Modèle  | Nom de la table de la BDD | 
-| -------------- |:-------------------------:|
-| Boisson        | boissons                  |
-| CommandeUser   | comannde_users            |
-
-Les constantes de classe DOIVENT être déclarées dans toutes les majuscules avec des séparateurs de soulignement.
-Les noms de classe doivent être déclarés dans StudlyCaps.
-Les constantes de classe doivent être déclarées dans toutes les majuscules avec des séparateurs de soulignement.
-Les noms de méthodes doivent être déclarés dans camelCase. (c'était snake_case en L3)
-Les noms de propriété et les arguments de fonction n'ont généralement pas de règle spécifique, mais doivent être écrits en fonction du paquet. Le document Laravel sur la convention ne donne pas plus d'informations sur les noms de propriétés. La seule règle est: utilisez toujours la même chose. Je suggérerais camelCase.
-Les noms de fonctions sont camelCase. (cependant, les normes officielles de codage PHP conseillent snake_case).
-Pour les noms de variables je suggérerais camelCase, cependant snake_case est conseillé par les normes officielles de codage PHP, contrairement aux recommandations de Zend Framework, qui interdit explicitement les underscores. Les variables ne sont pas mentionnées dans le groupe d'interopérabilité du framework PHP et je ne trouve aucun exemple dans le framework de base Laravel car tous les noms de variables sont des mots simples.

@@ -1,8 +1,35 @@
 # Memo - Formulaires sous LARAVEL
 ## *Campus Numérique 2018 - Véronique ROUAULT*
 #
-![mon image](images/laravel-requetes.jpg).
 
+## Projet de découverte de la récupération des données d'un formulaire avec LARAVEL
+
+1. cloner le dépot Git.
+
+2. Placer le répertoire choisi dans le www de wampserver
+```
+mkdir [nom du répertoire]
+cd [nom du répertoire]
+git clone https://github.com/campus-digital-grenoble/PHP_Formulaire.git .
+```
+
+3. Installation des dépendances via composer (Vendor)
+```
+composer install
+```
+4. Ajouter le fichier d'environnement en dupliquant le .env.exemple
+```
+cp .env.example .env
+```
+5. Générer une clé unique dans le .env
+```
+php artisan key:generate
+```
+6. Lancer le projet
+```
+php artisan serve
+```
+___
 ## Ajouter une nouvelle route pour le formulaire HTML
 
 Les routes doivent être ajoutées dans le fichier `routes/web.php`
