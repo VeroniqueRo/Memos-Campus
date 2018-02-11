@@ -1,4 +1,6 @@
 # Mémo - Programmation Orientée Objet - PHP
+## *Campus Numérique 2018 - Véronique ROUAULT*
+#
 
 [Résumé sur LogicBig.com](http://www.logicbig.com/tutorials/misc/php/php-oop-cheat-sheet/).
 
@@ -8,29 +10,28 @@
 
 Consiste en la définition et l'interaction de briques logicielles appelées objets.
 
-## Quelques définitions et syntaxes de base
+## Glossaire
 
-### Classe (Class)
-
-* Une classe est un ensemble de variables et de fonctions (attributs et méthodes).
-
-En général on crée un fichier par classe.
-
-### Instance
-
-*Instancier* une classe, c'est se servir d'une classe afin qu'elle crée un objet. Une instance est donc un objet.
-
-### Attribut (ou propriétés)
-
-* Un attribut est une variable
-
-### Méthodes
-
-* Une méthode est une fonction
-
-### Principe d'encapsulation
-
-* Seul le créateur de la classe peut la modifier. Avec des attributs privés l'accès à la classe est réservée.
+| Termes              | définition        |  Remarque     |
+| -------------       |-------------      | ------------  |
+| Objet               | Programme autosuffisant
+| Classe (Class)      | Ensemble d'attributs et de méthodes (moule de l'objet)     | En général on crée un fichier par classe  |
+| Instance            |  *Instancier* une classe, c'est se servir d'une classe afin qu'elle crée un objet. Une instance est donc un objet||
+| Attribut (ou propriétés)  | Un attribut est une variable de la classe||
+| Méthodes            | Une méthode est une fonction de la classe ||
+| Méthode statique    | (S'écrit ::) Méthode pouvant être utilisée sans instancier un objet ||
+| Héritage (Extend)| Création d'une classe fille qui récupère les attributs de la classe mère ||
+| Publique | Visible pas tous || Définitions de l'accès aux attributs d'une classe
+| Privée |  Visible uniquement dans la classe || Définitions de l'accès aux attributs d'une classe
+| Protégée | Accessible par la classe courante et la classe fille || Définitions de l'accès aux attributs d'une classe
+| New | Pour créer un nouvel objet ||
+| Constructeur | Méthode appelée lors de la construction d'un objet ||
+| Getteur | Permet de récupérer les attributs de la classe ||
+| Setteur | Permet de modifier les attributs de la classe ||
+| Surcharger | Redéfinir une méthode dans une classe fille ||
+| Constante | Variable qui ne varie pas comme Pi ||
+| Classe abstraite    | Classe qui ne peut pas être instanciée ||
+| Principe d'encapsulation | Seul le créateur de la classe peut la modifier. Avec des attributs privés l'accès à la classe est réservée ||
 
 ## Syntaxes de base
 
@@ -60,26 +61,25 @@ $var->display();
 Renvoie
 
 ```php
-
 a property value
 ```
 
 ### Le mot clé  "New" : Permet de créer une nouvelle instance de classe
 
-Un objet, c'est une instance de la classe.
+Un objet est une instance de la classe.
 
 ```php
 $var = new MyClass();
 ```
 
-### pseudo-variable $this
+### La pseudo-variable `$this`
 
 Fait référence à l'objet courant. Il est utilisé uniquement dans la classe.
 
-### Object operator ->
+### Object operator `->`
 
 Appel d'une méthode ou de l'accès à une propriété sur une instance d'objet.
-Utilisé aussi avec $this
+Utilisé aussi avec `$this`
 
 ```php
 $var->display();
@@ -89,11 +89,11 @@ $var->display();
 
 Les mots clés de visibilité (public, protected, private) déterminent la façon dont les propriétés / méthodes d'un objet sont accessibles:
 
-* *public* : peut être consulté n'importe où.
+* `public` : peut être consulté n'importe où.
 
-* *protected* : peut être consulté par la classe et les sous-classes uniquement.
+* `protected` : peut être consulté par la classe et les sous-classes uniquement.
 
-* *private* : peut être consulté par la classe seulement.
+* `private` : peut être consulté par la classe seulement.
 
 Une propriété doit être définie avec l'un des mots clés de visibilité ci-dessus.
 Une méthode définie sans aucun d'eux aura une visibilité publique par défaut.
@@ -170,7 +170,7 @@ class Personnage
 
 ## Constantes de classe
 
-Définies avec le mot clé 'const'.
+Définies avec le mot clé `const`.
 
 Peut pêtre défini dans une classe. La visibilité par défaut des constantes de classe est publique.
 
@@ -178,11 +178,11 @@ Les constantes sont allouées une fois par classe, et non pour chaque instance d
 
 ## Opérateur de résolution de portée (::)
 
-Au lieu d'utiliser ->, le double-point permet l'accès à la statique et à la constante. Cet opérateur est également utilisé pour accéder aux fonctionnalités de super classe.
+Au lieu d'utiliser `->`, le double-point permet l'accès à la statique et à la constante. Cet opérateur est également utilisé pour accéder aux fonctionnalités de super classe.
 
-## Utiliser 'self'
+## Utiliser `self`
 
-Au lieu d'utiliser *$ this*, le mot-clé *self* est utilisé pour accéder aux constantes de la classe. Généralement, pour tous les accès de niveau classe, self doit être utilisé et pour tous les accès aux instances d'objet en cours $ ceci doit être utilisé dans la classe.
+Au lieu d'utiliser `$ this`, le mot-clé `self` est utilisé pour accéder aux constantes de la classe. Généralement, pour tous les accès de niveau classe, self doit être utilisé et pour tous les accès aux instances d'objet en cours $ ceci doit être utilisé dans la classe.
 
 Syntaxe
 
@@ -247,11 +247,11 @@ $perso->parler();
 
 ## Accéder à un élément depuis la classe
 
-Si on essaye d'accéder à un attribut privé, php retournera une erreur :
+Si on essaye d'accéder à un attribut privé, php retournera une erreur.
 
-Pour accéder à un attribut privé hors de la classe on soit utiliser la pseudo-variable *$this*
+Pour accéder à un attribut privé hors de la classe on soit utiliser la pseudo-variable `$this`
 
-A noter : *$this* est une variable représentant l'objet à partir duquel on a appelé la méthode :
+A noter : `$this` est une variable représentant l'objet à partir duquel on a appelé la méthode :
 
 ```php
 <?php
@@ -331,19 +331,19 @@ class Personnage
 }
 ```
 
-En ajoutant le nom de la classe au paramètre on s'assure que la méthode *frapper()* ne sera exécutée que si le paramètre passé est de type *Personnage*, sinon PHP interrompt tout le script.
+En ajoutant le nom de la classe au paramètre on s'assure que la méthode `frapper()` ne sera exécutée que si le paramètre passé est de type `Personnage`, sinon PHP interrompt tout le script.
 
 ## Accesseurs et mutateurs
 
 Méthodes magiques :
 
-* __get() : getters ou accesseur
-* __set() : setters ou mutateur
+* __get() : `getters` ou accesseur
+* __set() : `setters` ou mutateur
 
 Ces méthodes portent par convention le même nom que l'attribut dont elles renvoient la valeur.
-Il yn a autant de getter et de setter que d'attributs.
+Il y en a autant de `getter` et de `setter` que d'attributs.
 
-### Accéder à un attribut : l'accesseur ou getter
+### Accéder à un attribut : `l'accesseur ou getter`
 
 ```php
 <?php
@@ -385,9 +385,9 @@ class Personnage
 }
 ```
 
-### Modifier la valeur d'un attribut : les mutateurs ou setters
+### Modifier la valeur d'un attribut : `les mutateurs ou setters`
 
-Ces méthodes sont de la forme *setNomDeLAttribut()*
+Ces méthodes sont de la forme `setNomDeLAttribut()`
 
 Voici la liste des mutateurs (ajoutée à la liste des accesseurs) de notre classePersonnage:
 
@@ -398,14 +398,14 @@ Voici la liste des mutateurs (ajoutée à la liste des accesseurs) de notre clas
 
 ### Constructeurs et destructeurs
 
-Une fonction de constructeur __construct () est une fonction spéciale (magique) qui est automatiquement appelée quand une instance d'objet est créée avec le mot-clé 'new'.
+Une fonction de constructeur `__construct ()` est une fonction spéciale (magique) qui est automatiquement appelée quand une instance d'objet est créée avec le mot-clé `new`.
 
-Un constructeur peut avoir n'importe quel nombre de paramètres définis par l'utilisateur. Les constructeurs devraient idéalement être utilisés pour initialiser l'objet
+Un `constructeur` peut avoir n'importe quel nombre de paramètres définis par l'utilisateur. Les constructeurs devraient idéalement être utilisés pour initialiser l'objet
 Le return est automatique avec un constructeur.
 
-Un *destructeur* est une fonction spéciale __destruct () qui est appelée automatiquement lorsque l'objet est supprimé de la mémoire.
+Un `destructeur` est une fonction spéciale `__destruct ()` qui est appelée automatiquement lorsque l'objet est supprimé de la mémoire.
 
-Les destructeurs sont généralement utilisés pour le nettoyage, la persistance de l'état, etc.
+Les `destructeurs` sont généralement utilisés pour le nettoyage, la persistance de l'état, etc.
 
 Syntaxe
 
@@ -445,13 +445,13 @@ destroying MyClass
 
 ### Propriétés statiques et méthodes
 
-Les propriétés de classe et les méthodes peuvent être déclarées avec un mot-clé *static* qui en fait des fonctionnalités de niveau classe et nous n'avons pas besoin d'une instance de classe pour accéder à ces fonctionnalités.
+Les propriétés de classe et les méthodes peuvent être déclarées avec un mot-clé `static` qui en fait des fonctionnalités de niveau classe et nous n'avons pas besoin d'une instance de classe pour accéder à ces fonctionnalités.
 
-Comme les constantes de classe, nous accédons aux propriétés/méthodes statiques avec deux points (::) et pour y accéder dans la classe, nous utilisons le mot-clé *self*.
+Comme les constantes de classe, nous accédons aux propriétés/méthodes statiques avec deux points (::) et pour y accéder dans la classe, nous utilisons le mot-clé `self`.
 
 $this n'est pas disponible dans une méthode statique.
 
-Par défaut, les fonctionnalités statiques ont une accessibilité «publique».
+Par défaut, les fonctionnalités statiques ont une accessibilité « publique ».
 
 Pour l'initialisation de variable statique, les mêmes règles s'appliquent en tant qu'expressions const.
 
