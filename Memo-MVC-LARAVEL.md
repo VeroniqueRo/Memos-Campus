@@ -141,7 +141,7 @@ Vous pouvez enregistrer plusieurs contrôleurs de ressources à la fois en trans
 
 | Verb          | URI           | Action    | Route Name    |
 | ------------- |:-------------:| ---------:| -------------:|
-| GET 	        |/boissons      |	index 	| boissons.index|	
+|GET 	        |/boissons      |	index 	| boissons.index|	
 |GET 	        |/boissons/create 	|create |boissons.create|
 |POST 	        |/boissons 	    |store 	    |boissons.store|
 |GET 	        |/boissons/{boisson} |show 	|boissons.show|
