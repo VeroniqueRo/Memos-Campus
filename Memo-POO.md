@@ -32,6 +32,66 @@ Consiste en la définition et l'interaction de briques logicielles appelées obj
 | Constante | Variable qui ne varie pas comme Pi ||
 | Classe abstraite    | Classe qui ne peut pas être instanciée ||
 | Principe d'encapsulation | Seul le créateur de la classe peut la modifier. Avec des attributs privés l'accès à la classe est réservée ||
+## Quelques définitions et syntaxes de base
+### Classe (Class)
+
+* Une classe est un ensemble de variables et de fonctions (attributs et méthodes).
+
+En général on crée un fichier par classe.
+```php
+<?php
+    // Création de la classe Person
+    class Person {
+    }          
+    // Création d'une instance de la classe $me
+    $me = new Person ();
+    ?>
+```
+
+### Instance
+
+*Instancier* une classe, c'est se servir d'une classe afin qu'elle crée un objet. Une instance est donc un objet.
+
+```php
+<?php
+    class Person {
+        public $isAlive = true;
+        
+        function __construct($name) {
+            $this->name = $name;
+        }
+        public function dance() {
+        return "Je danse !";
+        }
+    }
+    $me = new Person("Marc");
+    if (is_a($me, "Person")) {
+        echo "Je suis une personne, ";
+    }
+    if (property_exists($me, "name")) {
+        echo "J'ai un nom, ";
+    }
+    if (method_exists($me, "dance")) {
+        echo "et je sais comment danser !";
+    }
+    ?>
+```
+Renvoie : 
+```
+Je suis une personne, J'ai un nom, et je sais comment danser ! 
+```
+
+### Attribut (ou propriétés)
+
+* Un attribut est une variable
+
+### Méthodes
+
+* Une méthode est une fonction
+
+### Principe d'encapsulation
+
+* Seul le créateur de la classe peut la modifier. Avec des attributs privés l'accès à la classe est réservée.
 
 ## Syntaxes de base
 
