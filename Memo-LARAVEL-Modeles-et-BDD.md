@@ -167,7 +167,7 @@ public function boissons()
 ___   
 ## Afficher toutes les recettes et toutes les boissons
 
-Dans le fichier recettecontroller
+Dans le fichier RecetteController
 ```php
 public function showRecipes() 
 {
@@ -192,30 +192,32 @@ Dans le fichier recette.blade
 ```
 Dans le fichier route
 ```php
-    Route::get('/recettes','recipesController@showRecipes');    
+    Route::get('/liste_recettes','RecetteController@index')->name('listeRecettes')
 ```
-## Afficher le tableau des Ingrédients de chaque boisson (Sur la même page)  
-
-Dans le fichier resultBoisson.blade
+## Afficher le tableau des Ingrédients d'une boisson (Sur la même page que la boisson)  
+Dans le fichier BoissonController
 ```php
-@foreach ($boisson->ingredients as $ingredient)
-    <tr>
-        <td>{{$ingredient->pivot->id}}</td> 
-        <td>{{$boisson->nom}}</td> 
-        <td>{{$ingredient->pivot->ingredient_id}}</td>
-        <td>{{$ingredient->nomIngredient}}</td>
-        <td>{{$ingredient->pivot->nbDose}}</td> 
-        <td>
-            <form id= "delete{{$ingredient->pivot->id}}" method="post" action="/ingredient/{{$boisson->id}}/{{$ingredient->id}}">
-                {{ csrf_field() }}
-                {{method_field('DELETE')}}
-                <div class="btn-group">
-                    <button type="submit" form="delete{{$ingredient->pivot->id}}" class="btn btn-outline-danger"> X </button>
-                </div>
-            </form>
-        </td>
-    </tr>
-@endforeach  
+function detailsBoisson($id) {
+
+        $boisson = Boisson::find($id);
+        $ingredients = $boisson->ingredients()->get();
+        // dump($ingredients);
+        $allIngredients = Ingredient::all();
+
+        return view('boissons.detail-boisson', ['boisson'=>$boisson, 'ingredients'=> $ingredients, 'listeIngredients'=>$allIngredients]);
+    
+    }
+```
+Dans le fichier detail-boisson.blade
+```php
+@foreach ($ingredients as $ingredient)
+        <tr>
+            <td>{{$ingredient->id}}</td>
+            <td>{{$ingredient->nom}}</td>
+            <td>{{$ingredient->pivot->nbDose}}</td>
+            <td>{{$ingredient->stock}}</td>
+        </tr>
+        @endforeach
 ```
 Dans le fichier controller 
 
