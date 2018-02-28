@@ -161,7 +161,11 @@ Dans le model Ingredient :
 ```php
 public function boissons()
     {
+<<<<<<< HEAD
         return $this->belongsToMany('App\Boisson')->withPivot('nbDose');
+=======
+        return $this->belongsToMany('App\Boisson')->withPivot('nbDose','id');
+>>>>>>> 886357e5266a7a3d515fa9076b24577e9d8dd71a
     }  
 ``` 
 ___   
@@ -196,7 +200,7 @@ Faire la migration en ligne de commande :
 ___   
 ## Afficher toutes les recettes et toutes les boissons
 
-Dans le fichier recettecontroller
+Dans le fichier RecetteController
 ```php
 public function showRecipes() 
 {
@@ -221,12 +225,29 @@ Dans le fichier recette.blade
 ```
 Dans le fichier route
 ```php
+<<<<<<< HEAD
     Route::get('/Liste_recettes','recetteController@index');    
+=======
+    Route::get('/liste_recettes','RecetteController@index')->name('listeRecettes')
+>>>>>>> 886357e5266a7a3d515fa9076b24577e9d8dd71a
 ```
-## Afficher le tableau des Ingrédients de chaque boisson (Sur la même page)  
-
-Dans le fichier resultBoisson.blade
+## Afficher le tableau des Ingrédients d'une boisson (Sur la même page que la boisson)  
+Dans le fichier BoissonController
 ```php
+function detailsBoisson($id) {
+
+        $boisson = Boisson::find($id);
+        $ingredients = $boisson->ingredients()->get();
+        // dump($ingredients);
+        $allIngredients = Ingredient::all();
+
+        return view('boissons.detail-boisson', ['boisson'=>$boisson, 'ingredients'=> $ingredients, 'listeIngredients'=>$allIngredients]);
+    
+    }
+```
+Dans le fichier detail-boisson.blade
+```php
+<<<<<<< HEAD
 @foreach ($boisson->ingredients as $ingredient)
     <tr>
         <td>{{$ingredient->pivot->id}}</td> 
@@ -244,6 +265,16 @@ Dans le fichier resultBoisson.blade
         </td>
     </tr>
 @endforeach  
+=======
+@foreach ($ingredients as $ingredient)
+        <tr>
+            <td>{{$ingredient->id}}</td>
+            <td>{{$ingredient->nom}}</td>
+            <td>{{$ingredient->pivot->nbDose}}</td>
+            <td>{{$ingredient->stock}}</td>
+        </tr>
+        @endforeach
+>>>>>>> 886357e5266a7a3d515fa9076b24577e9d8dd71a
 ```
 Dans le fichier controller 
 
