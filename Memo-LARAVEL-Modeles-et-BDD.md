@@ -75,7 +75,7 @@ Dans le model Vente, ajouter
 ```php
 public function boisson ()
 {
-return $this->belongsTo('App\boisson');
+return $this->belongsTo('App\Boisson');
 }
 ```
 
@@ -87,7 +87,8 @@ Dans le fichier de migration vente :
 ```php
 public function up()
     {
-    Schema::create('ventes', function (Blueprint $table) {
+    Schema::create('ventes', function (Blueprint $table)
+    {
         $table->increments('id');
         $table->integer('nbSucre'); 
         $table->integer('boisson_id')->unsigned();
@@ -101,41 +102,51 @@ Dans le fichier controller vente, ajouter dans l'entête les liens réciproques 
     use App\Boisson; 
 ```
         
-et modifier le code
+et ajouter une fonction store
 ```php
 //ajouter une commande
 public function store(Request $request)
 {
-    $ventes = new Vente();
-    //récupère dans le model Boisson un tableau avec la liste des boissons. [0]:position 0 du tableau
-    $boisson = Boisson::whereNom(request('inputBoisson'))->get()[0];
-    $ventes->boisson_id = $boisson->id;
-    $ventes->nbSucre = request('inputNbSucre');
-    $ventes->save();
+    $newVente = new Vente();
+    
+    $newVente->boisson_id = request('inputBoisson');
+    $newVente->nbSucre = request('inputNbSucre');
+    $newVente->save();
 
-    return redirect('commandes');
+    return redirect('/Liste_ventes');
 }
 ```
     
-*Dans le fichier vente.blade :
+Dans le fichier vente.blade :
 ```php
-@foreach($ventes as $vente)
-        <tr>
-            <td>{{$vente->id}} </td>
-            <td>{{$vente->boisson->nom}} </td>  //utilise la table boisson
-            <td>{{$vente->boisson->prix}} </td>
-            <td>{{$vente->nbSucre}}</td>
-            <td>{{$vente->boisson_id}}</td>
-            <td>{{$vente->created_at}}</td>
-        </tr>
-@endforeach
+<table class = "table table-hover table-bordered">  
+                <tr class="active">
+                    <td>Numéro de vente</td>
+                    <td>Nom de la boisson</td>
+                    <td>Nombre de sucres</td>  
+                    <td>Prix</td>
+                    <td>Date de la vente</td>
+                </tr>
+                @foreach($ventes as $vente)
+                    <td>{{$vente->id}}</td>
+                    <td>{{$vente->boisson->nom}}</td>
+                    <td>{{$vente->nbSucres}}</td>
+                    <td>{{$vente->boisson->prix}} cts</td>
+                    <td>{{$vente->created_at}}</td>
+                    </tr>
+                @endforeach
+            </table>
 ```
 Dans le fichier route 
 ```php
-    Route::post('commandes/create','CommandeController@store');
+    // Route pour l'ajout d'une vente
+
+        Route::post('/machineACafe','VenteController@store')->name('ajoutVente');
 ```
 ----
 ## Relation n:n  ---> belongsToMany() 
+
+On veut créer des recettes à partir des ingrédients.
 
 Une boisson peut avoir plusieurs ingrédients et un ingrédient peut appartenir à plusieurs boissons  
 
@@ -143,16 +154,45 @@ Dans le model Boisson :
 ```php
 public function ingredients()
 {
-    return $this->belongsToMany('App\Ingredient')->withPivot('nbDose','id');
+    return $this->belongsToMany('App\Ingredient')->withPivot('nbDose');
 }  
 ```         
 Dans le model Ingredient :
 ```php
 public function boissons()
     {
-        return $this->belongsToMany('App\boisson')->withPivot('nbDose','id');
+        return $this->belongsToMany('App\Boisson')->withPivot('nbDose');
     }  
 ``` 
+___   
+## Créer la table de liaison entre Boisson et Ingrédients (qui correspond aux Recettes)
+
+En ligne de commande
+
+    $ php artisan make:migration create_boisson_ingredient_table
+
+
+## Dans le fichier de migration qui vient d'être créé, préciser les champs dans la table de liaison (clé primaire & étrangère)
+``` php
+public function up()
+    {
+        Schema::create('boisson_ingredient', function (Blueprint $table) {
+
+            $table->integer('boisson_id');
+            $table->integer('ingredient_id');
+            $table->primary(['boisson_id','ingredient_id']);  //clé primaire : couple
+            $table->foreign('boisson_id')->references('id')->on('boissons'); //clé étrangère
+            $table->foreign('ingredient_id')->references('id')->on('ingredients'); //clé étrangère
+            $table->integer('nbDose');
+            $table->timestamps();
+        });
+    }
+``` 
+
+Faire la migration en ligne de commande : 
+
+    php artisan migrate
+
 ___   
 ## Afficher toutes les recettes et toutes les boissons
 
@@ -164,7 +204,7 @@ public function showRecipes()
     $boissons= Boisson::all()->load('ingredients');
 
     //Retourner la vue avec les données 
-    return view('back_office/recettes', ["boissons"=> $boissons]);
+    return view('recettes.lister-recettes', ["boissons"=> $boissons]);
 }
 ```
 Dans le fichier recette.blade
@@ -173,7 +213,7 @@ Dans le fichier recette.blade
     @foreach($boisson->ingredients as $ingredient)
 <tr>
     <td>{{$boisson->nom}}</td>
-    <td>{{$ingredient->nomIngredient}}</td>
+    <td>{{$ingredient->nom}}</td>
     <td>{{$ingredient->pivot->nbDose}}</td>
 </tr> 
     @endforeach 
@@ -181,7 +221,7 @@ Dans le fichier recette.blade
 ```
 Dans le fichier route
 ```php
-    Route::get('/recettes','recipesController@showRecipes');    
+    Route::get('/Liste_recettes','recetteController@index');    
 ```
 ## Afficher le tableau des Ingrédients de chaque boisson (Sur la même page)  
 
@@ -191,8 +231,7 @@ Dans le fichier resultBoisson.blade
     <tr>
         <td>{{$ingredient->pivot->id}}</td> 
         <td>{{$boisson->nom}}</td> 
-        <td>{{$ingredient->pivot->ingredient_id}}</td>
-        <td>{{$ingredient->nomIngredient}}</td>
+        <td>{{$ingredient->nom}}</td>
         <td>{{$ingredient->pivot->nbDose}}</td> 
         <td>
             <form id= "delete{{$ingredient->pivot->id}}" method="post" action="/ingredient/{{$boisson->id}}/{{$ingredient->id}}">
