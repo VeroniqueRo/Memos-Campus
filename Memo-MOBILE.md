@@ -12,21 +12,21 @@
 
 | Terme	| Définition |
 | ------------- |:------------- |
-| IDE  | Intégrated Development Environnement
-| 
+| IDE  | Intégrated Development Environnement | 
+| ||
 | `Sous iOS (Apple)`	| |
-| Xcode  (IDE pour iOS)	| Est un environnement de développement pour le système d'exploitation macOS ainsi que pour IOS
-| Objective-C (Langage pour iOS)	| Est un langage de programmation orienté objet réflexif extension du C. Il est principalement utilisé dans les systèmes d'exploitation d'Apple : macOS et son dérivé iOS
-| 
+| Xcode  (IDE pour iOS)	| Est un environnement de développement pour le système d'exploitation macOS ainsi que pour IOS |
+| Objective-C (Langage pour iOS)	| Est un langage de programmation orienté objet réflexif extension du C. Il est principalement utilisé dans les systèmes d'exploitation d'Apple : macOS et son dérivé iOS |
+| ||
 | `Sous Android`	| |
-| Android studio (IDE pour ANDROID)	| Est un environnement de développement pour le système d'exploitation Android
-| Eclipse (IDE pour ANDROID)	| Eclipse est un projet, décliné et organisé en un ensemble de sous-projets de développements logiciels, de la fondation Eclipse visant à développer un environnement de production de logiciels libre qui soit extensible, universel et polyvalent, en s'appuyant principalement sur Java.
-| Java (Langage pour ANDROID)	| Langage de développement pour Android
-| 	
-| SDK (propre à chaque système d'exploitation)	| Pour créer une application mobile, il faut “communiquer avec le SDK natif” via le code source. SDK (Software Development Kit) est l'ensemble des outils d'accès aux fonctionalités d'un mobile (géolocalisation, contact, médias, appareil photo…) pour permettre la programmation d’applications mobiles.
-| 
-| Application mobile native générée | application mobile qui n’a pas été développée avec la technologie et le langage natifs à son système d’exploitation mais via une autre technologie (Xamarin, Titanium, Qt, etc.) qui va utiliser du code partagé entre plusieurs plateformes et générer un logiciel exécutable sur chaque OS visé.
-| Technologie cross-platform | technologie pouvant générer plusieurs logiciels à destination de systèmes d’exploitation différents à partir d’un code unique
+| Android studio (IDE pour ANDROID)	| Est un environnement de développement pour le système d'exploitation Android |
+| Eclipse (IDE pour ANDROID)	| Eclipse est un projet, décliné et organisé en un ensemble de sous-projets de développements logiciels, de la fondation Eclipse visant à développer un environnement de production de logiciels libre qui soit extensible, universel et polyvalent, en s'appuyant principalement sur Java. |
+| Java (Langage pour ANDROID)	| Langage de développement pour Android |
+| ||
+| SDK (propre à chaque système d'exploitation)	| Pour créer une application mobile, il faut “communiquer avec le SDK natif” via le code source. SDK (Software Development Kit) est l'ensemble des outils d'accès aux fonctionalités d'un mobile (géolocalisation, contact, médias, appareil photo…) pour permettre la programmation d’applications mobiles.|
+| ||
+| Application mobile native générée | application mobile qui n’a pas été développée avec la technologie et le langage natifs à son système d’exploitation mais via une autre technologie (Xamarin, Titanium, Qt, etc.) qui va utiliser du code partagé entre plusieurs plateformes et générer un logiciel exécutable sur chaque OS visé.|
+| Technologie cross-platform | technologie pouvant générer plusieurs logiciels à destination de systèmes d’exploitation différents à partir d’un code unique|
 
 ## Développement d’une application mobile native
 
