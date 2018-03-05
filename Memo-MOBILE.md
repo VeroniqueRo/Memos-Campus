@@ -81,5 +81,12 @@ Définition
 
 Différente de la `web app` qui n’est consultable que depuis un navigateur. LinkedIn est une application mobile hybride.
 
-![Hybride](images/developpement-hybride.png).
+![Hybride](images/developpement-hybride.png)
  
+## Différences entre une WebApp et une Application Mobile
+
+![Différences](images/comparaison-webapp-application-mobile.png).
+
+## Différences entre un Site Web et une Application Mobile
+
+![Shema](images/shema-mobile.png)
