@@ -37,7 +37,7 @@ Une `application mobile native` est une application conçue spécifiquement pour
 Tableau des langages et IDE* les plus courants pour chaque système d’exploitation
 
 | Système d’exploitation  | Langage(s) | IDE (environnement de développement) |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------| :-----|
 | iOS (Apple)	| Objective C et Swift	| Xcode |
 | Android	| Java	| Android Studio ou Eclipse |
 | Windows Phone | C# (se dit “C sharp”) | Visual Studio |
@@ -57,6 +57,7 @@ La compilation a un rôle primordial car les logiciels fonctionnent avec du code
 3 – Génération d’un code binaire natif
 
 Le compilateur (Apache Cordova (Open Source) /PhoneGap (commercial) ) transforme le code source en code binaire et génère un fichier spécique à chaque système d'exploitation.
+
 | Système d’exploitation  | Nom d’extension de fichier |
 | ------------- |:-------------:| 
 | iOS (Apple) |	.ipa |
