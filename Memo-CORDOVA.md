@@ -19,7 +19,7 @@
     ```html
     cordova platform add android 
     ```
-* Exécute et compile le projet dans l’environnement choisi : soit Android pour le lancer dans le simulateur de téléphone
+* Exécute et compile (commande 'build') le projet dans l’environnement choisi : soit Android pour le lancer dans le simulateur de téléphone
 
     ```html  
     cordova run <platform name>
@@ -37,6 +37,6 @@
 | “plugins”|	Des fichiers « android.json » et « browser.json » contenant les différents plugins installés pour chaque environnement|
 |“www”|	Le projet complet avec son index.html et les fichiers associés css, images et js dans des dossiers séparés|
 |“package.json”	|C’est la carte d’identité de notre application. Il contient au minimum le nom du projet, la version (majeure, mineure et patch) et le tableau listant les dépendances installées avec npm.|
-|“config.xml”|	C’est le fichier de configuration global du projet. Il spécifie son nom, sa description, son auteur, les plugins et les paramètres spécifiques aux plate-formes|
+|“config.xml”|	C’est le fichier de configuration global du projet. Il contient les informations nécessaires sur l'application (nom, description, auteur, les plugins et les paramètres spécifiques aux plate-formes concernées |
 |“www/index.html”|	C’est la page de démarrage du projet, celle qui sera affichée dans le navigateur ou dans le mobile.|
 |||
