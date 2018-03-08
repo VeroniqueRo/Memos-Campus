@@ -1,9 +1,0 @@
-# Mémo - SSH Github
-## *Campus Numérique 2018 - Véronique ROUAULT*
-#
-## Ressources en ligne
-
-* [Site officiel APACHE CORDOVA](https://cordova.apache.org/)
-
-## Copier la clé public de notre répertoire 
-
