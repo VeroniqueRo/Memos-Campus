@@ -27,6 +27,28 @@
 | ||
 | Application mobile native générée | application mobile qui n’a pas été développée avec la technologie et le langage natifs à son système d’exploitation mais via une autre technologie (Xamarin, Titanium, Qt, etc.) qui va utiliser du code partagé entre plusieurs plateformes et générer un logiciel exécutable sur chaque OS visé.|
 | Technologie cross-platform | technologie pouvant générer plusieurs logiciels à destination de systèmes d’exploitation différents à partir d’un code unique|
+|||
+|Compilateur|	Un compilateur est un programme qui transforme un langage de programmation source en général de haut niveau en un langage cible de plus bas niveau.|
+|PhoneGap (Compilateur Cordoba pour les APP Hybrides) a des extentions commerciales|	Adobe PhoneGap ou seulement PhoneGap est un framework destiné à faciliter la création d'applications mobiles pour différentes plateformes - Android, iOS, Windows Phone. Développé par Adobe Systems, il est basé sur Apache Cordova et distribué sous licence open-source.|
+|Vue.js (Framework)|Est un Framework Javascript évolutif pour construire des interfaces utilisateur. Il peut être intégré avec d'autres bibliothèques ou projets existants.|
+|React (Framework)|	React (aussi appelé React.js ou ReactJS) est une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage. React ne génère que l'interface de l'application considérée comme la Vue dans le modèle MVC. Elle peut être utilisée avec une autre bibliothèque comme AngularJS.|
+|Angular (Framework)|	AngularJS est un framework JavaScript libre et open source développé par Google. Il permet de développer des pages web.|
+|Ionic (Framework)|	Framework basé initialement sur Angular JS et Apache Cordova, Ionic permet de créer un code multisupport en utilisant des outils Web comme html, CSS, Javascript, afin de générer des applications iOS, Android, Chrome, Windows Phone ou autres.|
+|Task runner|	Petits logiciels écrits en JavaScript qui permettent d'automatiser les tâches récurrentes lors d'un développement Web.|
+|Dépendance	|"Module indépendant ( bibliothèques) contenu dans un projet informatique (chargé dans le dossier nodes-modules) nécessaire au fonctionnement de celui-ci. L'ensemble des dépendances sont réunies dans un fichier package.json".|
+|NPM (Node.js)|Package Manager à l'origine pour Node.js devenu le package manager du Javascript aussi bien en front qu'en back. C'est un gestionnaire de taches grace aux scripts qu'il permet d'exécuter.|
+|||
+|Single page app|	Une application web monopage (en anglais single-page application ou SPA) est une application web accessible via une page web unique. Le but est d'éviter le chargement d'une nouvelle page à chaque action demandée, et de fluidifier ainsi l'expérience utilisateur|
+|App native|	Une application native est une application mobile conçue pour un système d'exploitation spécifique téléchargeable depuis les boutiques en ligne (Apple Store, Samsung Apps...)|
+|App hybride|	Application basée sur un contenu Web commun aux différents systèmes d'exploitation qui est ensuite "encapsulé" dans une sur-couche adaptée aux défférents systèmes souhaités.|
+|WebApp	|Une WebAPP est une application mobile basée sur les langages de programmation Html, CSS5 et JavaScript et dont accessibles sur tous les navigateurs mobiles quelque soit la plateforme. Elles sont moins coûteuses à développer que les applications natives et permettent d'avoir un responsive design sur toutes les plateformes.|
+|||
+|API|	Une API est une Interface de Programmation Applicative (Application Programming Interface) : Une application qui permet de récupérer une collection de données sous format .json|
+|RESTFUL|	Une API compatible REST, ou « RESTful », est une interface de programmation d'application qui fait appel à des requêtes HTTP pour obtenir (GET), placer (PUT), publier (POST) et supprimer (DELETE) des données.|
+|Stores	|"Boutiques en ligne permettant de télécharger des applications mobiles natives. Le Play Store pour Android et l'Apple Store pour Apple. Itunes est une application native IOs permettant de gérer des contenus multimédias."|
+|||
+|||
+
 
 ## Développement d’une application mobile native
 
@@ -82,12 +104,26 @@ Définition
 
 Différente de la `web app` qui n’est consultable que depuis un navigateur. LinkedIn est une application mobile hybride.
 
-![Hybride](images/developpement-hybride.png)
+* Programmation d'une application hybride
+
+    ![Hybride](images/developpement-hybride.png)
+
+* Fonctionnement de Cordova pour l'encapsulation des applications hybrides
+
+    ![Cordova](images/cordova.png)
  
 ## Différences entre une WebApp et une Application Mobile
 
-![Différences](images/comparaison-webapp-application-mobile.png).
+Une `WebApp` est une application avec du contenu interactif disponible en ligne qui s'adapte à la navigation sur les mobiles (responsive) ou est développé pour es mobiles (site mobile) mais qui nécessite un navigateur pour fonctionner. Elle peut être monayable via la publicité.
+Elle est facile à mettre à jour car son développement est identique à un site classique (Html, Javascript, PHP...)
 
-## Différences entre un Site Web et une Application Mobile
+Une `Application mobile` est développée pour un OS spécifique (natif). Elle est disponible sur les Stores (Apple Store et Goggle App) dont elle doit obtenir une autorisation et où elle peut être payante. Elle n'a pas besoin de navigateur pour fonctionner car elle est installée sur le mobile.
+Elle est plus complexe à mettre à jour car elle nécessite une modification sur chaque OS et une nouvelle autorisation de mise en ligne sur le Store.
 
-![Shema](images/shema-mobile.png)
+* Récapitulatif des systèmes Site Web / Web App et Application Mobile
+
+    ![Shema](images/shema-mobile.png)
+
+* Avantages et inconvénients des deux systèmes
+
+    ![Différences](images/comparaison-webapp-application-mobile.png).
