@@ -106,7 +106,10 @@ Différente de la `web app` qui n’est consultable que depuis un navigateur. Li
 
 * Programmation d'une application hybride
 
-    ![Hybride](images/developpement-hybride.png)
+    ![Hybride1](images/developpement-hybride.png)
+    
+    ![Hybride2](images/schema_technologies_hybrides.png)
+    
 
 * Fonctionnement de Cordova pour l'encapsulation des applications hybrides
 
