@@ -1,5 +1,5 @@
 # Mémo MVC avec le FRAMWORK LARAVEL
-## *Campus Numérique 2018 - Véronique ROUAULT*
+## *Campus Numérique 2018 - Véronique*
 #
 ##
 

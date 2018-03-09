@@ -1,6 +1,6 @@
 # Mémo - ANDROID - Environnement de développement
 
-## *Campus Numérique 2018 - Véronique*
+## *Campus Numérique 2018 - VR*
 #
 
 ## Installer Android Studio en configuration "standard"

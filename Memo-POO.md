@@ -1,5 +1,5 @@
 # Mémo - Programmation Orientée Objet - PHP
-## *Campus Numérique 2018 - Véronique ROUAULT*
+## *Campus Numérique 2018 - Véronique*
 #
 
 [Résumé sur LogicBig.com](http://www.logicbig.com/tutorials/misc/php/php-oop-cheat-sheet/).

@@ -1,5 +1,5 @@
 # Cours Open-Classroom
-## *Campus Numérique 2018 - Véronique ROUAULT*
+## *Campus Numérique 2018 - Véronique*
 #
 
 ```php
