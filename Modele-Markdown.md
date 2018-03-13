@@ -1,5 +1,5 @@
 # Modele Markdown
-## *Campus Numérique 2018 - Véronique ROUAULT*
+## *Campus Numérique 2018 - Véronique*
 #
 ## Ressources en ligne
 

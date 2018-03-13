@@ -1,5 +1,5 @@
 # Mémo LARAVEL - Réseau distant LINUX
-## *Campus Numérique 2018 - Véronique ROUAULT*
+## *Campus Numérique 2018 - Véronique*
 #
 
 ## Cloner le projet depuis Github sur le serveur

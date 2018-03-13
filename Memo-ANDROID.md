@@ -1,28 +1,28 @@
 # Mémo - ANDROID - Environnement de développement
 
-## *Campus Numérique 2018 - Véronique ROUAULT*
+## *Campus Numérique 2018 - Véronique*
 #
 
 ## Installer Android Studio en configuration "standard"
 
-* Télécharger Android Studio : [Lien téléchargement](https://developer.android.com/studio/index.html)
-* Aide à l'installation : [Lien aide](https://developer.android.com/studio/install.html)
+* Télécharger Android Studio : <a href="https://developer.android.com/studio/index.html" target="_blank">Lien téléchargement ici</a>
+* Aide à l'installation : <a href="https://developer.android.com/studio/install.html" target="_blank">Lien aide ici</a>
 
 
 ## Installer Node.js
 
-* Télécharger Node.js : [Lien téléchargement](https://nodejs.org/fr/)
+* Télécharger Node.js : <a href="https://nodejs.org/fr/" target="_blank">Lien téléchargement ici</a>
 
 
 ## Installer Cordova 
 
-Infos installation : [Infos](http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html)
+* Infos : <a href="http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html" target="_blank">Lien installation ici</a>
 
-Infos installation ANDROID : [Infos](http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#installing-the-requirements)
+* Infos : <a href="http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#installing-the-requirements" target="_blank">Lien installation ANDROID ici</a>
 
 ### Installer JDK (Java Development Kit)
 
-* Télécharger la version de Java adaptée : [Lien téléchargement](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* Télécharger la version de Java adaptée : <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">Lien téléchargement ici</a>
 
 ### Installer Cordova 
 
@@ -31,7 +31,7 @@ Infos installation ANDROID : [Infos](http://cordova.apache.org/docs/en/latest/gu
 node -v
 ```
 
-* Installer Cordova :
+* Installer Cordova en global sur le PC (-g) :
 ```
 npm install -g cordova
 ```
@@ -42,12 +42,12 @@ npm install -g cordova
 	* Récupérer les chemins :
         - de NPM 
         ```
-        C:\Users\veronique.rouault\AppData\Roaming\npm
+        C:\Users\veronique.ro\AppData\Roaming\npm
         ```
         - de SDK Android :
         ```
-        C:\Users\veronique.rouault\AppData\Local\Android\Sdk\tools
-        C:\Users\veronique.rouault\AppData\Local\Android\Sdk\tools
+        C:\Users\veronique.ro\AppData\Local\Android\Sdk\tools
+        C:\Users\veronique.ro\AppData\Local\Android\Sdk\platform-tools
         ```
 	* Choisir "Nouveau" et copier le chemin
 	* Déplacer vers le haut de la liste
@@ -56,7 +56,7 @@ npm install -g cordova
 
 # Projet Application
 
-Informations sur la création d'un projet : [Lien infos](http://cordova.apache.org/#getstarted)
+Informations sur la création d'un projet : <a href="http://cordova.apache.org/#getstarted" target="_blank">Lien infos</a>
 
 ## Créer un projet CORDOVA "Vide"
 
@@ -105,7 +105,7 @@ Modification du BIOS pour accepter les projets virtuels :
 ```
 cordova run android 
 ```
-Pour cérifier que Cordova compile bien le projet pour Android
+Pour vérifier que Cordova compile bien le projet pour Android
 
 1. Ouvrir le projet Cordova créé dans Android Studio
 2. Afficher le projet (onglet projet)

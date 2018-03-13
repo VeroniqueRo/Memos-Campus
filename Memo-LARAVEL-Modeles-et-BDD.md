@@ -1,5 +1,5 @@
 # Mémo LARAVEL - Modèles et BDD
-## *Campus Numérique 2018 - Véronique ROUAULT*
+## *Campus Numérique 2018 - Véronique*
 #
 
 # Les Modèles
@@ -161,11 +161,7 @@ Dans le model Ingredient :
 ```php
 public function boissons()
     {
-<<<<<<< HEAD
         return $this->belongsToMany('App\Boisson')->withPivot('nbDose');
-=======
-        return $this->belongsToMany('App\Boisson')->withPivot('nbDose','id');
->>>>>>> 886357e5266a7a3d515fa9076b24577e9d8dd71a
     }  
 ``` 
 ___   
@@ -225,11 +221,7 @@ Dans le fichier recette.blade
 ```
 Dans le fichier route
 ```php
-<<<<<<< HEAD
-    Route::get('/Liste_recettes','recetteController@index');    
-=======
     Route::get('/liste_recettes','RecetteController@index')->name('listeRecettes')
->>>>>>> 886357e5266a7a3d515fa9076b24577e9d8dd71a
 ```
 ## Afficher le tableau des Ingrédients d'une boisson (Sur la même page que la boisson)  
 Dans le fichier BoissonController
@@ -247,7 +239,6 @@ function detailsBoisson($id) {
 ```
 Dans le fichier detail-boisson.blade
 ```php
-<<<<<<< HEAD
 @foreach ($boisson->ingredients as $ingredient)
     <tr>
         <td>{{$ingredient->pivot->id}}</td> 
@@ -265,16 +256,6 @@ Dans le fichier detail-boisson.blade
         </td>
     </tr>
 @endforeach  
-=======
-@foreach ($ingredients as $ingredient)
-        <tr>
-            <td>{{$ingredient->id}}</td>
-            <td>{{$ingredient->nom}}</td>
-            <td>{{$ingredient->pivot->nbDose}}</td>
-            <td>{{$ingredient->stock}}</td>
-        </tr>
-        @endforeach
->>>>>>> 886357e5266a7a3d515fa9076b24577e9d8dd71a
 ```
 Dans le fichier controller 
 

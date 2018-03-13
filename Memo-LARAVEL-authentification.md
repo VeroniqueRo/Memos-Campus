@@ -1,5 +1,5 @@
 # Mémo LARAVEL - Authentification
-## *Campus Numérique 2018 - Véronique ROUAULT*
+## *Campus Numérique 2018 - Véronique*
 #
 
 Laravel contient une authentification permettant de se connecter, déconnecter, enregistrer et même envoyer un email lors de la perte du mot de passe.

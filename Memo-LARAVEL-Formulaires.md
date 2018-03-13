@@ -1,5 +1,5 @@
 # Memo - Formulaires sous LARAVEL
-## *Campus Numérique 2018 - Véronique ROUAULT*
+## *Campus Numérique 2018 - Véronique*
 #
 
 ## Projet de découverte de la récupération des données d'un formulaire avec LARAVEL

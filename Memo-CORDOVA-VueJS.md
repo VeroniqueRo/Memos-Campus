@@ -1,5 +1,5 @@
 # Mémo - CORDOVA + Vue.js
-## *Campus Numérique 2018 - Véronique ROUAULT*
+## *Campus Numérique 2018 - Véronique*
 #
 ## Ressources en ligne
 
@@ -11,7 +11,7 @@
 | ------------- |:------------- |
 | Contenu du répertoire “build”  |  | 
 | Contenu du répertoire “config” |	|
-| Contenu du répertoire “node_modules” | 	|
+| Contenu du répertoire “node_modules” | Les dépendances installées	|
 | Contenu du répertoire “resources” |	 |
 | Contenu du répertoire “src” |	|
 | Contenu du répertoire “static” | |
