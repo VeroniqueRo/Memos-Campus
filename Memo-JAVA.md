@@ -232,3 +232,53 @@ Il y a deux types de variables en Java
 
 
     La suite des normes d'ériture est dans [OpenClassroom](https://openclassrooms.com/courses/apprenez-a-programmer-en-java/les-variables-et-les-operateurs)
+
+# Créer un projet avec Maven
+
+[Cours complet sur Openclassroom](https://openclassrooms.com/courses/organisez-et-packagez-une-application-java-avec-apache-maven/creez-votre-premier-projet-maven)
+
+En respectant les conventions de Maven, on peut lui demander de générer un squelette de notre projet. Maven s'appuie sur des archétypes (des modèles).
+Pour demander à Maven de générer un squelette simple, on peut utiliser l'archétype `quickstart`.
+
+Ligne de commande à taper dans le répertoire de notre application :
+```
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -Darchetype
+```
+Réponses à doneraux questions posées :
+
+* groupld  : l'organisation qui porte le projet (exemple : org.exemple.demo)
+* artifactld   : le Projet (exemple: Mon-appli)
+* version (1.0-SNAPSHOT) : Laisser vide
+* package (org.exemple.demo) : Laisser vide
+
+Confirmer ce que l'on a saisi avec Y (yes)
+
+## Les fichiers d'un projet Maven
+
+le fichier de configuration du projet contient 
+```
+pom.xml
+```
+Le projet contient une arborescence de base : 
+```
+🗁 Mon-appli
+├── 🗎 pom.xml
+└── 🗁 src
+    ├── 🗁 main
+    │   └── 🗁 java
+    │       └── 🗁 org
+    │           └── 🗁 exemple
+    │               └── 🗁 demo
+    │                   └── 🗎 App.java
+    └── 🗁 test
+        └── 🗁 java
+            └── 🗁 org
+                └── 🗁 exemple
+                    └── 🗁 demo
+                        └── 🗎 AppTest.java
+```
+
+```
+mvn package
+```
+Commande qui compile, exécuté les tests et génère un fichier JAR
