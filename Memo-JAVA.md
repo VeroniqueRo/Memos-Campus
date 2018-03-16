@@ -282,3 +282,74 @@ Le projet contient une arborescence de base :
 mvn package
 ```
 Commande qui compile, exécuté les tests et génère un fichier JAR
+
+## Glossaire POO
+
+| Termes              | définition        | 
+| -------------       |-------------      | 
+| Objet               | Programme autosuffisant
+| Classe       | Ensemble d'attributs et de méthodes     |
+| Classe abstraite | Classe qui ne peut pas être instanciée |
+| Classe concrète | Classe qui peut être instanciée pour créer un objet |
+| Instance            |  *Instancier* une classe, c'est se servir d'une classe afin qu'elle crée un objet. Une instance est donc un objet |
+| Attribut (ou propriétés)  | Un attribut est une variable de la classe|
+| Méthodes            | Une méthode est une fonction de la classe |
+| Héritage (Extend)| Création d'une classe fille qui récupère les attributs de la classe mère |
+| Parent | Classe principale |
+| Enfant | Classe qui hérite des attributs et méhodes de la classe parent |
+| Interface | Classe 100% abstraite pouvant être utilisée par plusieurs enfants |
+| Implements | Mot clé pour qu'une classe utilise une interface |
+| Package | C'est le dossier où les classes sont rangées / Charger un package permet d'utiliser les classes qu'il contient  |
+| Polymorphisme | Comportement d'une méthodes qui peut être différent selon les situations  |
+| Constructeur | Méthode appelée lors de la construction d'un objet |
+| Getteur | Permet de récupérer les attributs de la classe |
+| Setteur | Permet de modifier les attributs de la classe |
+| Surcharger | Redéfinir une méthode dans une classe fille |
+| Import | Mot clé permettant d'utiliser un package dans une classe  |
+| Build | Processus couvrant toutes les étapes nécessaires à la création d'un "livrable" du projet |
+| Final | Mot-clé indiquant qu'un élément ne peut être changé dans la suite du programme |
+| Principe d'encapsulation | Seul le créateur de la classe peut la modifier. Avec des attributs privés l'accès à la classe est réservée |
+
+## Exemples de syntaxe
+
+* Définir un objet de type classe
+
+    ```java
+
+    public class Chien {
+
+        private String nom;
+
+        public void mange(Aliment aliment) {
+            ...
+        }
+
+        ...
+    }
+    ```
+* Définit un objet de type interface, qui spécifie un comportement
+    ```java
+    public interface Animal {
+
+        String getNom();
+        String getCri();
+        int getAge()
+        void mange(Aliment aliment);
+        ...
+    }
+    ```
+    NB : Une interface ne contient que des définitions, c'est-à-dire pas de code. 
+* Indique qu'une classe implémente une(des) interface(s). 
+
+    ```java
+    public class Chien implements Animal {
+        ...
+    }
+    ```
+    NB : Une classe peut implémenter plusieurs interfaces, séparées alors par des virgules
+    ```java
+    public class Chien implements Animal, Serializable, Cloneable {
+        ...
+    }
+    ```
+    Lorsqu'une classe implémente une interface, elle doit en implémenter toutes les méthodes, sauf si elle est marquée abstract
