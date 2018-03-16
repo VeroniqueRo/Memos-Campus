@@ -300,7 +300,7 @@ Commande qui compile, exécuté les tests et génère un fichier JAR
 | Interface | Classe 100% abstraite pouvant être utilisée par plusieurs enfants |
 | Implements | Mot clé pour qu'une classe utilise une interface |
 | Package | C'est le dossier où les classes sont rangées / Charger un package permet d'utiliser les classes qu'il contient  |
-| Polymorphisme | Comportement d'une méthodes qui peut être différent selon les situations  |
+| Polymorphisme | Comportement d'une méthode qui peut être différent selon les situations  |
 | Constructeur | Méthode appelée lors de la construction d'un objet |
 | Getteur | Permet de récupérer les attributs de la classe |
 | Setteur | Permet de modifier les attributs de la classe |
