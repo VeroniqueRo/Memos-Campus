@@ -192,46 +192,236 @@ Il y a deux types de variables en Java
 * Des variables de type simple ou "primitif" (Nombre entiers, réels, boléens ou string)
 * Des variables de type complexe ou des "objets"
 
-### Les variables de type numérique
+### Les variables
 
-* Le type `byte` (1 octet) peut contenir les entiers entre 
--128 et +127
-    ```java
-    byte temperature;
-    temperature = 64;
-    ```
-* Le type `short` (2 octets) contient les entiers compris entre -32768 et +32767
-    ```java
-    short vitesseMax;
-    vitesseMax = 32000;
-    ```
-* Le type `int` (4 octets) va de -2*109 à 2*109 (2 avec 9 zéros)
-    ```java
-    int temperatureSoleil;
-    temperatureSoleil = 15600000; //La température est exprimée en kelvins
-    ```
-* Le type `long` (8 octets) peut aller de −9×1018  à 9×1018.
-    ```java
-    long anneeLumiere;
-    anneeLumiere = 9460700000000000L;
-    ```
-    NB : Il faut impértivement ajouter un L à la fin du nombre sinon le complateur  ne compilera pas
+Une variable contient une valeur et, en java, doit être typée.
 
-* Le type `float` (4 octets) est utilisé pour les nombres avec une virgule flottante.
+* Le type `int` concerne les varibales numériques
+* Le type `boléen` true or false
+* le type `char` est composé d'un seul charactère et s'écrit entre deux simples apostrophes 
     ```java
-    float pi;
-    pi = 3.141592653f;
+        public class Variables {
+	public static void main(String[] args) {
+
+		int myNumber=42;
+		boolean isFun=true; 
+		char movieRating='A'; 
+
+	    }   
+    }
     ```
-    ou
-    ```java
-    float pi;
-    pi = 3.141592653f;
-    ```
-    NB : Il faut utiliser un point plutôt qu'une virgule
-
-
-
     La suite des normes d'ériture est dans [OpenClassroom](https://openclassrooms.com/courses/apprenez-a-programmer-en-java/les-variables-et-les-operateurs)
+
+* Modulo
+
+    Le modulo en math retourne le reste d'une division de deux nombres.
+
+    14 modulo (%) 6 renvera 2 (14/6 = 2*6 + 2)
+    ```java
+    public class Modulo {
+        public static void main(String[] args) {
+
+            int myRemainder = 14 % 6;
+            System.out.println(myRemainder);
+
+        }
+    } 
+    ```
+* Les opérateurs
+
+    | Opérateur           | Définition        | 
+    | ------------------- |------------------ | 
+    | <     |   plus petit que          |
+    | <=    |   plus petit ou égal à    |
+    | >     |   plus grand que          |
+    | >=    |   plus grand ou égal à    |
+    | ==    |   égal à                  |
+    | !=    |   différent de            |
+    | &&    |   comparaison "et"        |
+    | `||`  |   comparaison "ou"        |
+    | 
+
+Les évalutations des boléens se font dans l'ordre :
+    
+    d'abord ! puis && puis ||
+
+* Les conditions ternaires sont composées de trois parties
+    
+1. Une expression boléenne `(fuelLevel > 0) ?`
+2. Une instruction unique exécutée si l'expression unique est vraie `'Y' :`
+3. Une instruction unique exécutée si l'expression unique est fausse `'N' ;`
+
+```java
+public class Ternary {
+	public static void main(String[] args) {
+		
+		int fuelLevel = 3;
+
+		char canDrive =
+		(fuelLevel > 0) ? 'Y' : 'N';
+		System.out.println(canDrive);
+
+	}
+}
+```
+Renvoie
+
+    Y
+
+* Les conditions avec `Switch`
+```java
+public class Switch {
+	public static void main(String[] args) {
+		
+		char penaltyKick = 'L';
+
+		switch (penaltyKick) {
+
+			case 'L': System.out.println("Messi shoots and scores!");
+								break; 
+			case 'R': System.out.println("Messi misses the goal!");
+								break;
+			case 'C': System.out.println("Keeper blocks his shoot!");
+								break;
+			default:
+				System.out.println("Messi is in position...");
+
+		}
+
+	}
+}
+```
+* Résumé de l'utilisation des classes et des méthodes (Code Cademy)
+```java
+class Dog extends Animal {
+  
+  int age;
+	public Dog(int dogsAge) {
+  	age = dogsAge;
+  }
+  
+  public void bark() {
+    System.out.println("Woof!");
+	}
+	
+  public void run(int feet) {
+    System.out.println("Your dog ran " + feet + " feet!");
+	}
+  
+  public int getAge() {
+    return age;
+	}
+
+	public static void main(String[] args) {
+    
+    Dog spike = new Dog(4);
+    spike.bark();
+    spike.run(40);
+    int spikeAge = spike.getAge();
+    System.out.println(spikeAge);
+    spike.checkStatus();
+
+	}
+}
+```
+## Les tableaux en Java (ArrayList)
+
+* ArrayList est une classe pré définie en Java
+    ```java
+    import java.util.ArrayList;
+
+    public class Temperatures {
+        
+        public static void main(String[] args) {
+
+        ArrayList<Integer> weeklyTemperatures = new ArrayList<Integer>();
+            
+            weeklyTemperatures.add(78);// Ajoute un élément dans le tableau
+            weeklyTemperatures.add(67);
+            weeklyTemperatures.add(89);
+
+            System.out.println( weeklyTemperatures.get(1));
+            // Affiche la température de l'index 1 soit 67
+
+            // Parcoure le tableau et en affiche tous les éléments
+                for (int j = 0; j < weeklyTemperatures.size(); j++) {
+            
+                    System.out.println(
+                    weeklyTemperatures.get(j));
+                }
+            }
+        }
+    }
+    ```
+
+    1. Appel de la classe ArrayList : `import java.util.ArrayList;`
+    2. Pour ajouter un élément dans un tableau on utilise la méthode  `add()`
+    3. Pour accéder à un élément du tableau on utilise son index et la méthode `get(index)`
+
+            System.out.println( weeklyTemperatures.get(1));
+                }
+
+        Donnera `67`
+
+    4. Pour insérer un élément à un index précis utiliser la notation :
+
+            weeklyTemperatures.add(1, 78);
+
+        Ajoutera `78` à l'index `1` du tableau
+
+    5. Dans la boucle `for` on utilisera la méthode `size` pour définir la longueur total du tableau
+
+    6. Une boucle `for each` s'écrira
+
+        ```java
+        for (Integer temperature : weeklyTemperatures) {
+                    System.out.println(temperature);
+                }
+        ```
+* `HashMap` est une autre classe prédéfinie
+
+    Le `HashMap` contient un ensemble de clés et une valeur pour chaque clé. Il permet de récupérer une valeur en appelant sa clé.
+
+    ```java
+    import java.util.HashMap;
+
+    public class Restaurant {
+        public static void main(String[] args) {
+        
+        // Crée un tableau avec une clé (String) et sa valeur (Integer)
+        HashMap<String, Integer> restaurantMenu = new HashMap<String, Integer>();
+        
+        // Ajoute un élément dans le HashMap
+        restaurantMenu.put("Turkey Burger",13);
+        restaurantMenu.put("Naan Pizza", 11);
+        restaurantMenu.put("Cranberry Kale Salad", 10);
+
+        // La méthode get permet de récupérer la valeur avec la clé
+        System.out.println(  restaurantMenu.get("Naan Pizza"));
+
+        // Affiche la taille du tableau
+        System.out.println(
+            restaurantMenu.size());
+
+            // Affiche les infos pour chaque élémet du tableau
+            for (String item : restaurantMenu.keySet()) {
+
+			System.out.println("A " + item + " costs " + restaurantMenu.get(item) + " dollars.");
+
+		}
+
+        }
+    }
+    ```
+
+    1. Ajouter des éléments avec la méthode `.put("Key",value)`
+    2. Pour récupérer des éléments on utilise la clé avec la méthode `.get("Key")`
+    3. la méthode `.size()` permet de récupérer la longueur du tableau
+    4. La méthode `.keySet()` retourne la liste des clés du tableau
+
+
+
+
 
 # Créer un projet avec Maven
 
@@ -288,7 +478,7 @@ Commande qui compile, exécuté les tests et génère un fichier JAR
 | Termes              | définition        | 
 | -------------       |-------------      | 
 | Objet               | Programme autosuffisant
-| Classe       | Ensemble d'attributs et de méthodes     |
+| Classe       | Ensemble d'attributs et de méthodes (Moule de l'objet)    |
 | Classe abstraite | Classe qui ne peut pas être instanciée |
 | Classe concrète | Classe qui peut être instanciée pour créer un objet |
 | Instance            |  *Instancier* une classe, c'est se servir d'une classe afin qu'elle crée un objet. Une instance est donc un objet |
@@ -305,7 +495,7 @@ Commande qui compile, exécuté les tests et génère un fichier JAR
 | Getteur | Permet de récupérer les attributs de la classe |
 | Setteur | Permet de modifier les attributs de la classe |
 | Surcharger | Redéfinir une méthode dans une classe fille |
-| Import | Mot clé permettant d'utiliser un package dans une classe  |
+| Import | Mot clé permettant d'utiliser une classe d'un package différent  |
 | Build | Processus couvrant toutes les étapes nécessaires à la création d'un "livrable" du projet |
 | Final | Mot-clé indiquant qu'un élément ne peut être changé dans la suite du programme |
 | Principe d'encapsulation | Seul le créateur de la classe peut la modifier. Avec des attributs privés l'accès à la classe est réservée |
@@ -321,7 +511,7 @@ Commande qui compile, exécuté les tests et génère un fichier JAR
         private String nom;
 
         public void mange(Aliment aliment) {
-            ...
+           System.out.println("quelque chose à afficher");
         }
 
         ...
@@ -353,3 +543,4 @@ Commande qui compile, exécuté les tests et génère un fichier JAR
     }
     ```
     Lorsqu'une classe implémente une interface, elle doit en implémenter toutes les méthodes, sauf si elle est marquée abstract
+
