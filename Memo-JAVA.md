@@ -3,7 +3,9 @@
 #
 ## Ressources en ligne
 
-[Nom du lien](https://docs.docker.com/).
+* [Mémo des mots clés Java sur Developpez.com](http://thierry-leriche-dessirier.developpez.com/tutoriels/java/mots-cles-java/#LIV-B-9)
+
+* [Memento Java](http://www.icauda.com/files/memento-java.pdf)
 
 ## Définitions
 
