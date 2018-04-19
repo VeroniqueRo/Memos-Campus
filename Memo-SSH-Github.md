@@ -1,14 +1,13 @@
 # Mémo - SSH Github
 ## *Campus Numérique 2018 - Véronique*
 #
-## Ressources en ligne
 
 
 1. Récupérer la clé publique sur notre dossier `P`
 
     * Aller dans le dossier `.ssh`
-
-        ![Dossier .ssh](images/ssh-git/dossier-ssh.png)
+    
+        ![Capture d'écran](images/ssh-git/dossier-ssh.png)
     * Ouvrir le fichier `id_rsa.pub` (la clé publique) avec un éditeur
     * Copier la clé complète
 
@@ -16,7 +15,7 @@
 
     * dans le dossier `Settings` 
 
-        ![Dossier .ssh](images/ssh-git/git-settings.png)
+        ![Capture d'écran](images/ssh-git/git-settings.png)
     * Choisir `SSH and GPG keys` dans `Personal settings`
     * Créer une nouvelle clé SSH `New SSH key`
     * Donner un nom et coller la clé publique
@@ -29,7 +28,7 @@
     * Choisir `use SSH` (2)
     * Copier l'url du projet (3)
 
-        ![Dossier .ssh](images/ssh-git/clone-git.png)
+        ![Capture d'écran](images/ssh-git/clone-git.png)
 
  4. Modifier la connexion https en ssh sur un projet du PC
 
