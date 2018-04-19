@@ -60,7 +60,7 @@ Tout cela constitue les `PII` (Personally Identifiable Information). Les `inform
 
 	Bien que les réseaux sociaux (notamment Facebook et Twitter) se disent vouloir être transparents sur le sujet et nous permettent de consulter la raison qui a permis à un annonceur de nous cibler, cela reste insuffisant.
 
-	En effet, Facebook ne communique qu'un seul critère le plus large possible et les attributs sensibles sont volontairement masqués par celui-ci qui l'ai forcément moins.
+	En effet, Facebook ne communique qu'un seul critère et les attributs sensibles sont volontairement masqués par celui-ci qui est volontairement le plus large possible.
 
 ## Conclusion
 
