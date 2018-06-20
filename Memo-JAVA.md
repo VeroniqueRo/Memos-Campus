@@ -551,3 +551,27 @@ Commande qui compile, exécuté les tests et génère un fichier JAR
     ```
     Lorsqu'une classe implémente une interface, elle doit en implémenter toutes les méthodes, sauf si elle est marquée abstract
 
+## L'encapsulation
+
+## Générer la JavaDoc d'un programme sous IntelliJ
+
+1. Ajouter le plugin `Javadoc`
+```
+Ctrl + Alt + S
+```
+Rechercher JavaDoc dans la barre de recherche et installer
+2. Pour générer la JavaDoc
+    Se placer sur le projet complet et faire
+```
+Ctrl + Alt + Maj + G
+```
+3. Pour effacer la JavaDoc
+    Se placer sur le projet complet et faire
+```
+Ctrl + Alt + Maj + Z
+```
+4. Pour générer le fichier html dans le navigateur
+    Se placer sur le projet complet et faire
+```
+Ctrl + Alt + Maj + G
+```
