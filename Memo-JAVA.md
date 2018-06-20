@@ -23,16 +23,21 @@
 * des `applets` : des programmes incorporés à des pages web.
 * des `applications mobiles`, avec J2ME.
 
-## Installation
+## Installation de l'environnement
 
-JDK doit être installé et le chemin vers JDK doit être ajouté dans le PATH => 
-```
-C:\Program Files\Java\jdk1.8.0_161\bin
-```
+* Installer JDK
+* Ajouter le chemin vers JDK dans le PATH des variables d'environnement
+    ```
+    C:\Program Files\Java\jdk1.8.0_161\bin
+    ```
+* Ajouter une variable "JAVA_HOME" dans les variables d'environnement
+    ```
+    "JAVA_HOME" : C:\Program Files\Java\jdk1.8.0_161
+    ```
 
-Si JRE et JDK sont présents dans les variables d'environnement (PATH) JDKdoit être placé avant JRE.
+* Si JRE et JDK sont tous les deux présents dans les variables d'environnement (PATH) JDK doit être placé avant JRE.
 
-Dans la console, `javac` doit être accessible et afficher les infos suivantes :
+* Dans la console, `javac` doit être accessible et afficher les infos suivantes :
 
 ```
 $ javac
