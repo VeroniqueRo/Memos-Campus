@@ -82,3 +82,13 @@ La gestion des conflits se fait en 3 étapes :
 * si nouveau conflit détecté
 
         $ git pull  
+
+## Initialiser un projet en local quand le repository existe sur git
+
+*       cd existing_folder
+
+*       git init
+*       git remote add origin URL_DU_REPOSITORY_SUR_GIT
+*       git add *
+*       git commit -m "Initial commit"
+*       git push -u origin master
