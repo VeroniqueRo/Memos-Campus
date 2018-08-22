@@ -107,3 +107,9 @@ Elle est constituée de 3 séries de tests principaux.
     
 
 ![testpyramide](images/tdd/idealtestpyramid.jpg)
+
+## Le BDD en amont
+
+Le BDD Behavior-Driven Development peut être fait en amont des TDD afin d'identifier exactement ce que doit faire le code.
+
+
