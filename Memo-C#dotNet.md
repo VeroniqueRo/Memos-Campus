@@ -57,7 +57,7 @@ La variable est initialisée à la valeur "Soleil"
 * **NB** : Les énumérations se déclarent en tant que membre d'une classe et non dans une méthode.
 
 
-### Les opérateurs et l'utilisation des conditions est identiques à JAVA.
+### Les opérateurs et l'utilisation des conditions sont identiques à JAVA.
 
 Rappel : 
 
