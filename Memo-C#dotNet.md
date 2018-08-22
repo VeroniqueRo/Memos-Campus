@@ -28,7 +28,7 @@
 La syntaxe est : type nom;
 ```
 * **NB** : le point-virgule est indispensable sans quoi Visual Studio ne peut pas compiler le code.
-* **NB** : Il est nécessaire de donner une valeur par défaut aux variables crées. Sinon, le compilateur retourenera une erreur.
+* **NB** : Il est nécessaire de donner une valeur par défaut aux variables crées. Sinon, le compilateur retournera une erreur.
 ```
 string message = string.Empty;
 string message = "";
