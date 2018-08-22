@@ -11,7 +11,7 @@
 | Terme        | Définition     |
 | ------------- |-------------- | 
 | C#     | Language de programmation orienté objet récent (début 2000) inspiré de Java (donc typé) et développé par Microsoft. C'est le langage recommandé pour développer sous Windows. |
-| .Net   | C'est le framework ou environnement d'exécution (aussi écrit Dot NET et prononcé "dotte nette") pour programmer en C# qouq Windows : accès réseau, création de fenêtres, appel à une base de données... Pour développer sour MacOS ou Linux il faut utiliser .NET Core | 
+| .Net   | C'est le framework ou environnement d'exécution (aussi écrit Dot NET et prononcé "dotte nette") pour programmer en C# sous Windows : accès réseau, création de fenêtres, appel à une base de données... Pour développer sous MacOS ou Linux il faut utiliser .NET Core | 
 | Variables | Obligatoirement écrit avec des caratères alphanumériques et _ (underscore) et doit forcément commencer par une lettre. Il ne doit pas être un mot réservé : Type ou classe déjà définie.|
 ![Types de base](images/csharp/variables.png)
 

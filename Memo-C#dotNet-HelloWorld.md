@@ -15,7 +15,7 @@ Si une modification doit être apportée au programme, il faudra compiler à nou
 
 Mais une fois compilé, le programme n'aura plus besoin de rien d'autres pour fonctionner.
 
-`Langage interprété` : Ils ne sont pas tranformés en langage machine avant d'être exécutés. Un interpréteur transforme la source en un résultat. Les exemples les plus simples de langages interprétés sont les langages permettant d'afficher une page web, ils sont lu par une programme externe (le navigateur web) qui affichera un résultat.
+`Langage interprété` : Il n'est pas tranformé en langage machine avant d'être exécuté. Un interpréteur transforme la source en un résultat. Les exemples les plus simples de langages interprétés sont les langages permettant d'afficher une page web, ils sont lus par une programme externe *(le navigateur web)* qui affichera un résultat.
 
 Si une modification est ajoutée au code source, il n'y aura pas besoin de compiler une nouvelle fois l'application.
 
@@ -23,9 +23,9 @@ Mais ces types de programmes ont besoin d'autres programmes pour être exécuté
 
 # Fonctionnement de .net
 
-Le C# est un langage à mi-chemins entre des **langages compilés** et **interprétés** : ils ne sont pas directement compilé en langage machine, mais il ne sont pas non plus interprétés !
+Le C# est un langage à mi-chemin entre un **langage compilé** et **langage interprété** : il n'est pas directement compilé en langage machine, mais il n'est pas non plus interprété !
 
-En réalité, ils vont être compilés en un langage intermédiaire (appelé IL pour "Intermediate Language"). Lors de l'exécution ce langage intermédiaire va être compilé en langage machine et exécuté par le CLR (Common Language Runtime), ce "runtime" va en quelque sorte faire l'intermédiaire entre notre code et le système d'exploitation en apportant une importante abstraction vis à vis de fonctions systèmes de bases (entrés/sorties, gestion de la mémoire, etc...).
+En réalité, ils est compilé en un langage intermédiaire *(appelé IL pour "Intermediate Language")*. Lors de l'exécution ce langage intermédiaire va être compilé en langage machine et exécuté par le CLR *(Common Language Runtime)*, ce "runtime" va en quelque sorte faire l'intermédiaire entre le code et le système d'exploitation en apportant une importante abstraction vis à vis de fonctions systèmes de bases *(entrés/sorties, gestion de la mémoire, etc...)*.
 
 
 ## Shéma du fonctionnement interne de .net
