@@ -55,9 +55,7 @@ Temps tempsDuJour = Temps.Soleil;
 La variable est initialisée à la valeur "Soleil"
 
 * **NB** : Les énumérations se déclarent en tant que membre d'une classe et non dans une méthode.
-
-
-### Les opérateurs et l'utilisation des conditions sont identiques à JAVA.
+## Les opérateurs et l'utilisation des conditions sont identiques à JAVA.
 
 Rappel : 
 
@@ -72,6 +70,16 @@ Rappel :
 | &&    |   comparaison "et"        |
 | `||`  |   comparaison "ou"        |
 |       |                           |
+
+## Glossaire 
+
+| Terme          | Définition        | 
+| ------------------- |------------------ | 
+| Abstrait(e)     |  Une classe qui est déclarée `astract` n'a pas besoin d'être instanciée pour être utilisée
+| Attribut    |   Un attribut est l'équivalent d'une variable déclarée dans une classe. Il possède donc un nom et un type. Il a également un niveau d'accès (public, protégé, privé) et peut également avoir une valeur par défaut.    |
+
+
+
 
 ## Quelques exemples de syntaxe
 

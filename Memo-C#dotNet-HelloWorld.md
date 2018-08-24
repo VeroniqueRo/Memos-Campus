@@ -59,9 +59,27 @@ namespace NomChoisiPourLaSolution
     }
 }
 ```
-# Création d'un dossier de tests
+# Création d'un dossier de tests unitaires
 
+## Création du dossier global
 
+* Faire un clic droit sur la `solution souhaitée`
+* Choisissez `Ajouter`, puis `Nouveau projet`
+* Dans la boîte de dialogue Nouveau Projet, développez `Installé`, développez `Visual C#`, puis choisissez `Test`.
+* Dans la liste des modèles, sélectionnez `Projet de test unitaire(;NET Framework)`.
+* Saisir un nom (exemple UnitTests) dans la zone Nom, puis choisissez OK.
+* Le projet "UnitTests" est ajouté à la solution.
+* Dans le projet "UnitTests", ajoutez éventuellement une référence à la solution.
+* Dans l’Explorateur de solutions, sélectionnez `Références` dans le projet "UnitTests" puis choisissez `Ajouter une référence` dans le menu contextuel.
+* Dans la boîte de dialogue `Gestionnaire de références`, développez `Solution` puis cochez l’élément souhaité.
+
+## Ajout d'un test sur une classe spécifique
+
+* Dans la classe à tester faire un clic sur classe à tester
+* Choisir `créer des tests unitaires`
+* Dans la boite de dialogues selectionner le projet de tests, puis choisissez OK.
+
+**NB** : Les références seront ajoutées automatiquement et le nom par défaut sera NomdelaclasseTests.cs
 
 # Utilisation des Fake objets pour l'injection de dépendances
 
