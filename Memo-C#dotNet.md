@@ -20,7 +20,7 @@
 
 * les `guillemets ( " )` servent à encadrer une chaîne de **caractères**
 * les `apostrophes ( ' )` servent à encadrer un **caractère**.
-```
+```csharp
 "Une phrase" et 'A'.
 ```
 * Pour utiliser une variable, il faut d'abord la déclarer : on réserve une partie de la mémoire pour cette variable. On spécifie ce qu'elle représentera *(un entier, un caractère, une image, ...)* en indiquant son type.
@@ -39,7 +39,7 @@ string message = "";
 ### Les énumérations
 
 Liste de valeurs qui a un type unique. Ce type est le nom de l'énumération. 
-```java
+```csharp
 enum Temps
 {
     Inconnu,
@@ -72,3 +72,52 @@ Rappel :
 | &&    |   comparaison "et"        |
 | `||`  |   comparaison "ou"        |
 |       |                           |
+
+## Quelques exemples de syntaxe
+
+Affichage dans la console
+```csharp
+Console.WriteLine("…");
+```
+Utilisation dans la classe Program.cs 
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World !");
+            
+        }
+    }
+}
+```
+Pour initialiser une variable à 0
+```csharp
+string message = string.Empty;
+// Identique à : (string message = "";)
+```
+## Quelques raccourcis clavier
+Lancement du débogage dans la console
+```csharp
+F5
+```
+Réindentation
+```csharp
+ ctrl + k + ctrl + d
+```
+Ajouter un commentaire (on peut aussi juste ajouter // devant la ligne à commenter)
+```csharp
+ ctrl + k + ctrl + c
+```
+Retirer un commentaire
+```csharp
+ ctrl + k + ctrl + u
+```

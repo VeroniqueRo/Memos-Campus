@@ -25,9 +25,44 @@ Mais ces types de programmes ont besoin d'autres programmes pour être exécuté
 
 Le C# est un langage à mi-chemin entre un **langage compilé** et **langage interprété** : il n'est pas directement compilé en langage machine, mais il n'est pas non plus interprété !
 
-En réalité, ils est compilé en un langage intermédiaire *(appelé IL pour "Intermediate Language")*. Lors de l'exécution ce langage intermédiaire va être compilé en langage machine et exécuté par le CLR *(Common Language Runtime)*, ce "runtime" va en quelque sorte faire l'intermédiaire entre le code et le système d'exploitation en apportant une importante abstraction vis à vis de fonctions systèmes de bases *(entrés/sorties, gestion de la mémoire, etc...)*.
+Le C# est précompilé en un langage intermédiaire *(appelé IL pour "Intermediate Language")*.
+
+Lors de l'exécution, ce langage intermédiaire va être compilé en langage machine et exécuté par le CLR *(Common Language Runtime)*, ce "runtime" va en quelque sorte faire l'intermédiaire entre le code et le système d'exploitation en apportant une importante abstraction vis à vis de fonctions systèmes de bases *(entrés/sorties, gestion de la mémoire, etc...)*.
 
 
 ## Shéma du fonctionnement interne de .net
 ![Fonctionnement interne de .net](images/csharp/fonctionnement-dot-net.png)
+
+# Création d'un nouveau projet sous Visual Studio
+
+ Dans la fenêtre principale, allez sur la menu `Fichier`, puis `Nouveau` et `Projet`. 
+
+ Dans la fenêtre qui s'ouvre choisir le type de projet `Application console (.NET Framework)`
+
+ Le Framework crée une `Solution` avec le nom choisie
+
+ Elle génère différents dossiers dont `Program.cs` 
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NomChoisiPourLaSolution
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
+}
+```
+# Création d'un dossier de tests
+
+
+
+# Utilisation des Fake objets pour l'injection de dépendances
+
 
