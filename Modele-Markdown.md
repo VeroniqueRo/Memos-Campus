@@ -69,6 +69,14 @@ Markdown | Less | Pretty
 *Still* | `renders` | **nicely**
 1 | 2 | 3
 
+<details>
+ <summary>Exemple de menu déroulant ( cliquer pour dérouler )</summary>
+ 
+```js
+	ici je mets du code caché !
+```
+</details>
+
 ### Horizontal Rule
 
 Three or more...

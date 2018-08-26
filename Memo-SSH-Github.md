@@ -36,6 +36,17 @@
     * Ouvrir le fichier `config` dans un éditeur (WordPad)
     * remplacer l'ancienne url (https) par la nouvelle en ssh
 
+    ou mieux en ligne de commandes :
+
+    * effacer le lien https du fichier .git :
+
+            git remote remove origin
+
+    * modifier l'origin avec le nouveau lien SSH :
+
+            git remote add origin URL-DU-PROJET-EN-SSH
+
+
 5. Répondre `Yes` à la première connexion sur github
 
 6. Pour les nouveaux projets, utiliser systématiquement l'url en SSH
