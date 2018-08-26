@@ -7,7 +7,7 @@
 * [Cours HelloWorld sur Open ClassRoom](https://openclassrooms.com/fr/courses/218202-apprenez-a-programmer-en-c-sur-net/217501-les-winforms-ou-windows-forms)
 * [Documentation Microsoft](https://docs.microsoft.com/fr-fr/visualstudio/ide/quickstart-visual-basic-console)
 
-## Définition
+# Définition
 
 `Langage compilé` : Après avoir écrit le code, il est nécessaire d'utiliser un compilateur qui transformera le programme en langage machine compris par le processeur.
 
@@ -59,6 +59,49 @@ namespace NomChoisiPourLaSolution
     }
 }
 ```
+# Gestionnaire de paquets : NuGet
+
+* [Tuto de l'utilisatiopn de NuGet - OpenClassroom](https://openclassrooms.com/fr/courses/2818931-programmez-en-oriente-objet-avec-c/2819156-utilisez-le-gestionnaire-de-package-nuget)
+
+NuGet est un gestionnaire de package permettant de faciliter la gestion des références externes d'un projet. Il est utilisable aussi en mode console  
+```
+package à utiliser : Newtonsoft.Json
+```
+----
+# Utilisation d'une Bibliothèque de classes (.dll)
+ 
+* [Créez un projet bibliothèque de classes - OpenClassroom](https://openclassrooms.com/fr/courses/2818931-programmez-en-oriente-objet-avec-c/2819146-creez-un-projet-bibliotheque-de-classes)
+
+## Pourquoi utiliser des bibliothèques de classes ?
+* Pour leur aspect réutilisable :  
+Il est possible de stocker dans une librairie des classes et des méthodes qui auront besoin d'être utilisées plusieurs fois et/ou partagées par plusieurs applications.  
+
+* Pour l'architecture globale du projet :
+Architecturer son application permet de faciliter sa mise en place, sa maintenabilité et son évolutivité. 
+
+## Pour créer une dll dans la "solution"
+
+```
+-> clic droit sur notre solution et faire Ajouter > Nouveau Projet  
+-> Choisir le type "Bibliothèque de classes"  
+-> Lui donner un nom 
+```
+
+*nb : après création du projet library : lancer "générer la solution" pour afficher les fichiers .dll et .pdb*
+
+## Générer et utiliser la library  
+
+```
+-> clic droit sur les références du projet et sélectionner « Ajouter une référence »  
+-> projet > solution > selectionner la library > ok
+```
+
+## Exemple appel de la library
+```
+MaBibliotheque.Bonjour bonjour = new MaBibliotheque.Bonjour();  //objet.class nom = new objet.class()
+bonjour.DireBonjour(); //nom.methodedansclassBonjour()
+```
+
 # Création d'un dossier de tests unitaires
 
 ## Création du dossier global
@@ -79,7 +122,7 @@ namespace NomChoisiPourLaSolution
 * Choisir `créer des tests unitaires`
 * Dans la boite de dialogues selectionner le projet de tests, puis choisissez OK.
 
-**NB** : Les références seront ajoutées automatiquement et le nom par défaut sera NomdelaclasseTests.cs
+*NB : Les références seront ajoutées automatiquement et le nom par défaut sera NomdelaclasseTests.cs*
 
 # Utilisation des Fake objets pour l'injection de dépendances
 
