@@ -61,7 +61,7 @@ La syntaxe est : type nom;
 * **NB** : le point-virgule est indispensable sans quoi Visual Studio ne peut pas compiler le code.
 * **NB** : Il est nécessaire de donner une valeur par défaut aux variables crées. Sinon, le compilateur retournera une erreur.
 ```
-string message = string.Empty;
+string message = String.Empty; // Empty est une méthode de la classe System.String
 string message = "";
 ```
 * Il existe deux sortes de types : les ``types valeur`` *(notamment les structures)* et les ``types référence`` *(notamment les classes)*.

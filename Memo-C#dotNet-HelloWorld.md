@@ -64,6 +64,9 @@ namespace NomChoisiPourLaSolution
 * [Tuto de l'utilisatiopn de NuGet - OpenClassroom](https://openclassrooms.com/fr/courses/2818931-programmez-en-oriente-objet-avec-c/2819156-utilisez-le-gestionnaire-de-package-nuget)
 
 NuGet est un gestionnaire de package permettant de faciliter la gestion des références externes d'un projet. Il est utilisable aussi en mode console  
+* Aller dans `Outils`
+* Choisir `Gestionnaire des packages NuGet` -> `Gérer les packages Nuget pour la solution`
+
 ```
 package à utiliser : Newtonsoft.Json
 ```
@@ -102,6 +105,12 @@ MaBibliotheque.Bonjour bonjour = new MaBibliotheque.Bonjour();  //objet.class no
 bonjour.DireBonjour(); //nom.methodedansclassBonjour()
 ```
 
+# Récupération d'une API
+
+## Ressources en ligne
+* [JsonLint](https://jsonlint.com/) : Permet de tester et de visualiser une API 
+* ​[Json2csharp](http://json2csharp.com/) ​: Cet outil en ligne permet de trouver la structure de données à utiliser pour convertir un flux json en objet C#
+
 # Création d'un dossier de tests unitaires
 
 ## Création du dossier global
@@ -125,5 +134,92 @@ bonjour.DireBonjour(); //nom.methodedansclassBonjour()
 *NB : Les références seront ajoutées automatiquement et le nom par défaut sera NomdelaclasseTests.cs*
 
 # Utilisation des Fake objets pour l'injection de dépendances
+
+## Création d'une interface :  
+
+* Faire un clic droit sur le dossier souhaité
+* Choisissez `Ajouter`, puis `Nouvel élément` ou `Ctrl + Maj +A`
+* Choisir `Interface` 
+* Nommer ->  Ok
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HelloWorld
+{
+    public interface IDateTime
+    {
+        DateTime Date { get; } // Exemple de propriété à implémenter
+    }
+}
+```
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TransportsLibrary
+{
+    public interface IConnexionApi
+    {
+        String ConnexionApi(string url); // Exemple de méthode à implémenter
+    }
+}
+```
+## Création des classes qui implémentent cette interface
+
+* Création d'une classe `RealDateTime` pour la date réelle
+```csharp
+namespace HelloWorld
+{
+    class RealDateTime : IDateTime
+    {
+        public DateTime Date
+        {
+            get { return DateTime.Now; } // Propriété retournant la date actuelle
+        }
+
+    }
+}
+```
+### Dans l'exemple de la connexion a une API, la Connexion devient la RealConnexion 
+
+* Création d'une classe `FakeConnexionApi` réservée aux tests
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UnitTestProject;
+
+namespace TransportsLibrary
+{
+    class FakeConnexionApi : IConnexionApi
+    {
+        public String resultatJson { get; set; } // Propriété permettant de gérer les données de Ressource1
+
+        public String ConnexionApi(string url) // Méthode qui implémente celle de l'interface
+        {
+            return resultatJson;
+        }
+    }
+}
+```
+## Créez une application WPF 
+
+* Allez sur la menu `Fichier`, puis `Nouveau` et `Projet`. 
+* Choisir le type de projet `Application WPF (.NET Framework)`
+* Choisir un nom -> `OK`
+
+
+* [Implémentation d'un MVVM](https://www.youtube.com/watch?v=0IKOphciSZo)
+
+Les liaisons peuvent être des liaisons de données `OneWay` ou `TwoWay` vers des données de flux entre View et ViewModel.
 
 
